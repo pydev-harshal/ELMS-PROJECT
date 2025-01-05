@@ -1,0 +1,40 @@
+{% extends "Users/base.html" %}
+
+{% block Body %}
+
+<main class="main">
+
+    <div class="auth-wrapper">
+        <div class="auth-container">
+            <h1 class="brand-logo auth-logo"><i class="fa-solid fa-graduation-cap"></i>EASY LEARNING</h1>
+            <div class="auth-icon">
+                {% block AuthIcon %}{% endblock AuthIcon %}
+            </div>
+            <h2 class="auth-title">{% block AuthTitle %}{% endblock AuthTitle %}</h2>
+            <p class="auth-text">{% block AuthText %}{% endblock AuthText %}</p>
+            <div id="alertContainer" class="alert-container">
+                {% if messages %}
+                    {% for message in messages %}
+                        <div id="alert" class="alert alert-{{ message.tags }}">
+                            <div class="alert-icon icon-{{ message.tags }}">
+                            {% if message.tags == "success" %}
+                                    <i class="fa-solid fa-check"></i>
+                                {% else %}
+                                    <i class="fa-solid fa-triangle-exclamation"></i>
+                            {% endif %}
+                            </div>
+                            <p class="alert-message">{{ message }}</p>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            </div>
+            {% block AuthForm %}{% endblock AuthForm %}
+            {% block AuthLink %}{% endblock AuthLink %}
+        </div>
+    </div>
+    
+</main>
+
+
+
+{% endblock Body %}

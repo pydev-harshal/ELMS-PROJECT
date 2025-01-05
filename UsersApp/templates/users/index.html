@@ -1,0 +1,22 @@
+{% extends "Users/base_site.html" %}
+{% load static %}
+
+{% block PgTitle %} HOME {% endblock PgTitle %}
+
+{% block Main %}
+
+    {% if request.user.is_authenticated %}
+        <section class="welcome">
+            <div class="welcome-container container">
+                <div class="welcome-intials">
+                    <h1>{{ request.user.first_name.0 }}{{ request.user.last_name.0 }}</h1>
+                </div>
+                <div class="welcome-text-container">
+                    <h1 class="welcome-heading">Welcome, {{ request.user.first_name }} {{ request.user.last_name.0 }}</h1>
+                    <p class="welcome-text">Make 2025 the year of your career.</p>
+                </div>
+            </div>
+        </section>
+    {% endif %}
+
+{% endblock Main %}

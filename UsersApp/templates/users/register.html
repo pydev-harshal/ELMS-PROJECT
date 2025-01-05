@@ -1,0 +1,58 @@
+{% extends "Users/auth_base.html" %}
+
+{% block PgTitle %} REGISTER {% endblock PgTitle %}
+
+{% block AuthIcon %}
+    <i class="fa-solid fa-key"></i>
+{% endblock AuthIcon %}
+
+{% block AuthTitle %}
+    CREATE ACCOUNT
+{% endblock AuthTitle %}
+
+{% block AuthText %}
+    "Join Us and Unlock a World of Learning Opportunities."
+{% endblock AuthText %}
+
+
+{% block AuthForm %}
+    <form id="registerForm" method="POST">
+        {% csrf_token %}
+        <div class="form-item">
+            <label for="fullName" class="form-label">Full Name</label>
+            <div id="fullName" class="fullname-wrapper">
+                <input type="text" class="form-input" name="first_name" required>
+                <input type="text" class="form-input" name="middle_name">
+                <input type="text" class="form-input" name="last_name" required>
+            </div>
+        </div>
+
+        <div class="form-item">
+            <label for="emailId" class="form-label">Email</label>
+            <input id="emailId" type="email" class="form-input" autocomplete="email" name="email" required>
+        </div>
+
+        <div class="form-item">
+            <label for="password" class="form-label">Password</label>
+            <input id="password" type="password" class="form-input" autocomplete="new-password" name="password" required>
+        </div>
+
+        <div class="form-item">
+            <label for="confirmPassword" class="form-label">Confirm Password</label>
+            <input id="confirmPassword" type="password" class="form-input" autocomplete="new-password" name="confirm_password" required>
+        </div>
+
+        <div class="form-item">
+            <button id="registerbtn" class="auth-btn" type="submit">REGISTER</button>
+        </div>
+
+    </form>
+{% endblock AuthForm %}
+
+
+{% block AuthLink %}
+    <p class="auth-link">
+        Already have account?
+        <a href="{% url "login" %}">Login</a> 
+    </p>
+{% endblock AuthLink %}

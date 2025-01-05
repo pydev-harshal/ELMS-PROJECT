@@ -1,0 +1,258 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+*,
+*::before,*::after { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+html {
+    font-size: 62.5%;
+    font-family: "Montserrat", serif;
+}
+
+.container {
+    width: 90%;
+    margin: auto;
+}
+/* ------ COMMON END ------ */
+
+
+/* ------ NAVBAR START ------ */
+.navbar .nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 2rem;
+}
+
+/* Pending */
+.navbar .hamburger-icon {
+    display: none;
+}
+
+.navbar .brand-logo {
+    font-size: 2.4rem;
+    letter-spacing: 0.25rem;
+}
+
+.nav-searchbar {
+    min-width: 36%;
+    font-size: 1.8rem;
+}
+
+.nav-searchbar input {
+    width: 100%;
+    font-size: 1.8rem;
+    padding: 0.5rem 1.5rem;
+    border-radius: 2rem;
+}
+
+.nav-searchbar input::placeholder {
+    text-align: center;
+    letter-spacing: 0.25rem;
+}
+
+.nav-items {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-link {
+    font-size: 1.8rem;
+}
+/* ------ NAVBAR END ------ */
+
+
+/* ALERT-CONTAINER START */
+.alert {
+    margin: 0.5rem auto;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 1.5rem;
+    font-size: 1.6rem;
+    padding: 0.5rem 1.5rem;
+    border-radius:1rem;
+}
+.alert-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 3rem; 
+    height: 3rem; 
+    background-color: white;
+    border-radius: 50%;
+}
+.alert-error {
+    background-color: #ffc107;
+    color: black;
+}
+.alert-success {
+    background-color: #198754;
+    color: white;
+}
+.icon-success {
+    color: #198754;
+}
+/* ALERT-CONTAINER END */
+
+
+/* WELCOME-CONTAINER START */
+.welcome .welcome-container {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 0.5rem 1rem;
+}
+
+.welcome-intials {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.6rem;
+}
+
+.welcome-heading {
+    font-size: 2rem;
+}
+
+.welcome-text {
+    font-size: 1.8rem;
+}
+/* WELCOME-CONTAINER END */
+
+/* AUTHENTICATION PAGES */
+.auth-wrapper {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../img/auth-bg.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.auth-container {
+    border: 1px solid red;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;  
+    gap: 0.5rem;  
+    align-items: center;
+    padding: 1rem;
+}
+
+.auth-logo {
+    margin-bottom: 2rem;
+}
+
+.auth-icon {
+    font-size: 2.4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem; 
+    height: 4rem; 
+    background-color: aqua;
+    border-radius: 25%;
+    margin: auto;
+}
+
+.auth-title {
+    font-size: 2rem;
+    letter-spacing: 0.25rem;
+}
+
+.auth-text {
+    font-size: 1.8rem;
+}
+.auth-link {
+    font-size: 1.8rem;
+}
+
+form {
+    border: 1px solid rebeccapurple;
+    padding: 0.5rem;
+}
+
+.form-item:not(:first-child) {
+    margin-top: 1rem;
+}
+
+.form-label {
+    display: block;
+    font-size: 1.8rem;
+    padding: 0.25rem 1rem;
+}
+
+.form-input {
+    display: block;
+    font-size: 1.6rem;
+    padding: 0.6rem 1.6rem;
+    border-radius: 2rem;
+    width: 100%;
+}
+
+.fullname-wrapper {
+    display: flex;
+    gap: 1rem;
+}
+
+.fullname-wrapper .form-input {
+    max-width: 110px;
+}
+
+#loginForm .form-input {
+    min-width: 300px;
+}
+
+.resend-overlay {
+    position: relative;
+}
+
+#otpSection {
+    display: none;
+}
+
+.auth-btn {
+    display: block;
+    font-size: 1.6rem;
+    min-width: 50%;
+    margin:2rem auto 0rem auto;
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+}
+
+.resend-btn {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    padding: 0.6rem 1rem;
+    border-radius: 2rem;
+}
+
+#verifyBtn {
+    display: none;
+}
+
+
+
+
+

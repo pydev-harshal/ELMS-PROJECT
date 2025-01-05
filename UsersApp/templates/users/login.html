@@ -1,0 +1,54 @@
+{% extends "Users/auth_base.html" %}
+
+
+{% block PgTitle %} LOGIN {% endblock PgTitle %}
+
+{% block AuthIcon %}
+    <i class="fa-solid fa-user-plus"></i>
+{% endblock AuthIcon %}
+
+{% block AuthTitle %}
+    ACCOUNT LOGIN
+{% endblock AuthTitle %}
+
+{% block AuthText %}
+    "Join Us and Unlock a World of Learning Opportunities."
+{% endblock AuthText %}
+
+
+{% block AuthForm %}
+    <form id="loginForm" method="POST">
+        {% csrf_token %}
+        <div class="form-item">
+            <label for="emailId" class="form-label">Email</label>
+            <input id="emailId" type="email" class="form-input" name="email" required>
+        </div>
+
+        <div class="form-item">
+            <label for="password" class="form-label">Password</label>
+            <input id="password" type="password" class="form-input" name="password" required>
+        </div>
+
+        <div id="otpSection" class="form-item">
+            <label for="otpCode" class="form-label">Verification Code</label>
+            <div class="resend-overlay">
+                <input id="otpCode" type="text" class="form-input" name="otp_code" disabled required>
+                <button id="resendBtn" class="resend-btn" type="button">Resend <span id="resendTimer"></span></button>
+            </div>
+        </div>
+
+        <div class="form-item">
+            <button id="loginBtn" class="auth-btn" type="submit">LOGIN</button>
+            <button id="verifyBtn" class="auth-btn" type="submit" disabled>VERIFY</button>
+        </div>
+
+    </form>
+{% endblock AuthForm %}
+
+
+{% block AuthLink %}
+    <p class="auth-link">
+        Create new account?
+        <a href="{% url "register" %}">Register</a> 
+    </p>
+{% endblock AuthLink %}

@@ -1,0 +1,53 @@
+{% extends "users/base.html" %}
+{% load static %}
+
+{% block Body %}
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="brand-logo"><i class="fa-solid fa-graduation-cap"></i>EASY LEARNING</h1>
+            <div class="nav-searchbar">
+                <input type="text" placeholder="What you want to Learn ?">
+            </div>
+            <div id="hamburgerIcon" class="hamburger-icon">
+                <i class="fa-solid fa-bars"></i>
+            </div> 
+            <ul id="navItems" class="nav-items">
+                <li class="nav-item">
+                    <a href="{% url "login" %}" class="nav-link">
+                        <i class="fa-solid fa-right-to-bracket"></i> LOGIN
+                    </a>
+                </li> 
+                <li class="nav-item">
+                    <a href="{% url "register" %}" class="nav-link">
+                        <i class="fa-solid fa-user"></i> REGISTER
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="main">
+        
+        <div id="alertContainer" class="alert-container container">
+            {% if messages %}
+                {% for message in messages %}
+                    <div id="alert" class="alert alert-{{ message.tags }}">
+                        <div class="alert-icon icon-{{ message.tags }}">
+                            {% if message.tags == 'success' %}
+                                <i class="fa-solid fa-check"></i>
+                            {% else %}
+                                <i class="fa-solid fa-triangle-exclamation"></i>
+                            {% endif %}
+                        </div>
+                        <p class="alert-message">{{ message }}</p>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        </div>
+
+        {% block Main %} {% endblock Main %}
+
+    </main>
+
+{% endblock Body %}
