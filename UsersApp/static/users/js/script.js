@@ -25,7 +25,6 @@ function popAlert(status,message) {
                 <i class="fa-solid ${icon}"></i>
             </div>
             <p class="alert-message">${message}</p>
-            <button class="alert-btn" type="button"><i class="fa-solid fa-xmark"></i></button>
     `
     setTimeout(() =>{
         alertContainer.appendChild(alert)
